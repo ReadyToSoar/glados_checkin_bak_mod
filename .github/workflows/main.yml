@@ -11,7 +11,8 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    # runs-on: ubuntu-latest latest变成了24.04
+    runs-on: ubuntu-24.04
     steps:
       - uses: actions/checkout@v4 
       # 从v3变更成了v4
