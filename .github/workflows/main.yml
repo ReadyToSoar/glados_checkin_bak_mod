@@ -30,4 +30,5 @@ jobs:
         env: 
           GLADOS_COOKIES: "${{ secrets.GLADOS_COOKIES }}"
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-      - uses: gautamkrishnar/keepalive-workflow@master  
+          # 从master变成了v2
+      - uses: gautamkrishnar/keepalive-workflow@v2  
