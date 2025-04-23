@@ -31,4 +31,4 @@ jobs:
           GLADOS_COOKIES: "${{ secrets.GLADOS_COOKIES }}"
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
           # 从master变成了v2，再变v3试试
-      - uses: gautamkrishnar/keepalive-workflow@v3  
+   #   - uses: gautamkrishnar/keepalive-workflow@v3  
