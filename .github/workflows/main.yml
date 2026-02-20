@@ -3,19 +3,17 @@ name: 开始每日签到
 on:
   workflow_dispatch:
   schedule:
-    # UTC 0点0分(北京时间 8点0分/尝试更改至北京时间12点) github的工作流一般会有 1小时延迟 ，大概9点才打卡
-    - cron: 0 4 * * *
+    # UTC 0点0分(北京时间 8点0分) github的工作流一般会有 1小时延迟 ，大概9点才打卡
+    - cron: 0 0 * * *
   # 标星时触发工作流程
   watch:
     types: [started]
 
 jobs:
   build:
-    # runs-on: ubuntu-latest latest变成了24.04
-    runs-on: ubuntu-24.04
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 
-      # 从v3变更成了v4
+      - uses: actions/checkout@v3
       - name: Set up Python 3.9
         uses: actions/setup-python@v3
         with:
@@ -30,5 +28,4 @@ jobs:
         env: 
           GLADOS_COOKIES: "${{ secrets.GLADOS_COOKIES }}"
           PUSHPLUS_TOKEN: ${{ secrets.PUSHPLUS_TOKEN }}
-          # 从master变成了v2，再变v3试试
-   #   - uses: gautamkrishnar/keepalive-workflow@v3  
+      # - uses: gautamkrishnar/keepalive-workflow@master  
