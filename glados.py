@@ -14,17 +14,12 @@ if __name__ == '__main__':
         print('未获取到GLADOS_COOKIES环境变量')
         cookies = []
         exit(0)
-#   checkin_url = 'https://glados.rocks/api/user/checkin'【切换cloud版本】
     checkin_url = 'https://glados.cloud/api/user/checkin'
-#   status_url = 'https://glados.rocks/api/user/status'
     status_url = 'https://glados.cloud/api/user/status'
-#   referrer = 'https://glados.rocks/console/checkin'
     referrer = 'https://glados.cloud/console/checkin'
-#   origin = 'https://glados.rocks'
     origin = 'https://glados.cloud'
     useragent = 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
     payload = {
-#        'token': 'glados.one' 【还是失败，无法运行】
         'token': 'glados.cloud'
     }
     for cookie in cookies:
@@ -47,11 +42,3 @@ if __name__ == '__main__':
 
     if pkey !='':
         requests.get( 'http://www.pushplus.plus/send?token=' + pkey + '&title=GLaDOS签到情况&content=' + sendmsg)
-
-
-
-
-
-
-
-
