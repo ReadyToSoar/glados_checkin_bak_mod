@@ -31,23 +31,19 @@ if __name__ == '__main__':
         email = status.json()['data']['email']
 
 
-        
-
         resp_data = checkin.json()
-data_list = resp_data.get('list', [])
-if len(data_list) > 0:
-    balance = str(data_list[0]['balance']).split('.')[0]
-else:
-    balance = "获取失败"
-    print("接口list为空，无法读取余额，可能cookie失效")
-print("接口返回完整数据：", checkin.json())
-
-
+        data_list = resp_data.get('list', [])
+        print("接口返回完整数据：", resp_data)
+        if len(data_list) > 0:
+            balance = str(data_list[0]['balance']).split('.')[0]
+        else:
+            balance = "获取失败"
+            print("接口list为空，无法读取余额，可能cookie失效")
 
 
 
         
-        balance = str(checkin.json()['list'][0]['balance']).split('.')[0]
+ #       balance = str(checkin.json()['list'][0]['balance']).split('.')[0]
         change = str(checkin.json()['list'][0]['change']).split('.')[0]
 
         if 'message' in checkin.text:
